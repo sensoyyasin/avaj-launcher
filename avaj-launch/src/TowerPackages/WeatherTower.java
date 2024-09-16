@@ -8,9 +8,6 @@ public class WeatherTower extends Tower {
         int height = p_coordinates.getHeight();
         int latitude = p_coordinates.getLatitude();
 
-        //0-500m genellikle sicak. 500-2000m yagisli ve bulutlu. >2000m genellikle soguk ve karli
-        //0-23 enlemleri sicak(Ekvator) ve nemli, 23-66 enlemleri mevsimsel degiskenlik.(Orta enlem) 66-90 enlemleri genellikle soguk(kutuplar)
-
         if (height < 10) {
             if (latitude < 23)
                 return "SUN"; //Ekvatora yakın
