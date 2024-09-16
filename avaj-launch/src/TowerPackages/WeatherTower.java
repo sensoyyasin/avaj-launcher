@@ -1,34 +1,20 @@
 package TowerPackages;
 
 import CoordinatesPackages.Coordinates;
+import WeatherPackages.WeatherProvider;
 
 public class WeatherTower extends Tower {
+    private final WeatherProvider weatherProvider;
+
+    public WeatherTower() {
+        this.weatherProvider = WeatherProvider.getInstance();
+    }
 
     public String getWeather(Coordinates p_coordinates) {
-        int height = p_coordinates.getHeight();
-        int latitude = p_coordinates.getLatitude();
-
-        if (height < 10) {
-            if (latitude < 23)
-                return "SUN"; //Ekvatora yakın
-            else if (latitude < 66)
-                return "FOG"; //Orta enlem
-            else
-                return "RAIN"; //Kutuplara yakın
-        }
-
-        else if (height < 50) {
-            if (latitude < 23)
-                return "RAIN"; //Ekvatora yakın
-            else if (latitude < 66)
-                return "FOG"; //Orta enlem
-            else
-                return "SNOW"; //Kutuplara yakın + soguk
-        }
-        else
-            return "SNOW";
+        return weatherProvider.getCurrentWeather(p_coordinates);
     }
-    void changeWeather() {
-        conditionChanged();
+
+    public void changeWeather() {
+        conditionChanged(); // tüm gözlemcilere güncelleme
     };
 }

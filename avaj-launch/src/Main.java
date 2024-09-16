@@ -13,9 +13,8 @@ class AircraftFactory {
     private AircraftFactory() {}
 
     public static AircraftFactory getInstance() {
-        if (instance == null) {
+        if (instance == null)
             instance = new AircraftFactory();
-        }
         return instance;
     }
 
@@ -86,7 +85,7 @@ public class Main {
 
         // Simulate weather conditions change
         System.out.println(ShellColorCodes.YELLOW + "Simulating weather conditions change..." + ShellColorCodes.RESET);
-        weatherTower.conditionChanged();
+        weatherTower.changeWeather();
 
     }
 }
