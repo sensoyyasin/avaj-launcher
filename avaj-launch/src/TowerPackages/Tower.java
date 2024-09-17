@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    private final List<Flyable> observers = new ArrayList<>();
+    private final List<Flyable> observers = new ArrayList<Flyable>();
 
     public void register(Flyable p_flyable) {
         observers.add(p_flyable);
@@ -17,9 +17,7 @@ public class Tower {
     }
 
     protected void conditionChanged() {
-        for (Flyable p_flyable : observers) {
-            p_flyable.updateConditions();
-        }
+        for (int i = 0; i < observers.size(); i++)
+            observers.get(i).updateConditions();
     }
-
 }

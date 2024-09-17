@@ -9,9 +9,8 @@ public class WeatherProvider {
     private WeatherProvider() {}
 
     public static WeatherProvider getInstance() {
-        if (instance == null) {
+        if (instance == null)
             instance = new WeatherProvider();
-        }
         return instance;
     }
 

@@ -27,8 +27,13 @@ public class Aircraft extends Flyable {
     @Override
     public void updateConditions() {}
 
-
     public String getType() {
         return this.getClass().getSimpleName(); //Return the name of class
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s#%s(%d)", this.getClass().getSimpleName(), name, id);
+    }
+
 }

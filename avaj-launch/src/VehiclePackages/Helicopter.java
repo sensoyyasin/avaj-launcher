@@ -15,23 +15,23 @@ public class Helicopter extends Aircraft {
         switch (weather) {
             case "SUN":
                 coordinates = new Coordinates(coordinates.getLongitude() + 10, coordinates.getLatitude(), Math.min(coordinates.getHeight() + 2, 100));
-                System.out.println("Helicopter#" + name + "(" + id + "): This is hot.");
+                System.out.println(this + ": This is hot.");
                 break;
             case "RAIN":
                 coordinates = new Coordinates(coordinates.getLongitude() + 5, coordinates.getLatitude(), coordinates.getHeight());
-                System.out.println("Helicopter#" + name + "(" + id + "): It's raining. Better watch out for lightings.");
+                System.out.println(this + ": It's raining. Better watch out for lightings.");
                 break;
             case "FOG":
                 coordinates = new Coordinates(coordinates.getLongitude() + 1, coordinates.getLatitude(), coordinates.getHeight());
-                System.out.println("Helicopter#" + name + "(" + id + "): It's foggy. I can't see anything.");
+                System.out.println(this + ": It's foggy. I can't see anything.");
                 break;
             case "SNOW":
                 coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 12, 0));
-                System.out.println("Helicopter#" + name + "(" + id + "): My rotor is going to freeze!");
+                System.out.println(this + ": My rotor is going to freeze!");
                 break;
         }
         if (coordinates.getHeight() == 0) {
-            System.out.println("Helicopter#" + name + "(" + id + ") landing.");
+            System.out.println(this + ": landing.");
             unregisterTower();
         }
     }

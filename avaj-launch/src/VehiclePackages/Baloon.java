@@ -15,23 +15,23 @@ public class Baloon extends Aircraft {
         switch(weather){
             case "SUN":
                 coordinates = new Coordinates(coordinates.getLongitude() + 2, coordinates.getLatitude(), Math.min(coordinates.getHeight() + 4, 100));
-                System.out.println("Baloon#" + name + "(" + id + "): Let's enjoy the good weather and take some pics.");
+                System.out.println(this + ": Let's enjoy the good weather and take some pics.");
                 break;
             case "RAIN":
                 coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 5, 0));
-                System.out.println("Baloon#" + name + "(" + id + "): Damn you rain! You messed up my baloon.");
+                System.out.println(this + ": Damn you rain! You messed up my baloon.");
                 break;
             case "FOG":
                 coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 3, 0));
-                System.out.println("Baloon#" + name + "(" + id + "): It's foggy. I can't see anything.");
+                System.out.println(this + ": It's foggy. I can't see anything.");
                 break;
             case "SNOW":
                 coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 15, 0));
-                System.out.println("Baloon#" + name + "(" + id + "): It's snowing. We're gonna crash.");
+                System.out.println(this + ": It's snowing. We're gonna crash.");
                 break;
         }
         if (coordinates.getHeight() == 0) {
-            System.out.println("Baloon#" + name + "(" + id + ") landing.");
+            System.out.println(this + ": landing.");
             unregisterTower();
         }
     }
