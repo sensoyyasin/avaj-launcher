@@ -17,8 +17,8 @@ Your program will take one command-line argument representing the name of a text
 
 **Example Usage:**
 
-- $ java ro.academyplus.avaj.simulator.Simulator scenario.txt
-- $ cat simulation.txt
+- $ make run
+- $ cat -e simulation.txt
 
 Scenario File Format:
 
