@@ -3,23 +3,22 @@ package WeatherPackages;
 import CoordinatesPackages.Coordinates;
 
 public class WeatherProvider {
-    private static WeatherProvider instance;
+    private static WeatherProvider weatherProvider;
     private String[] weather = {"SUN", "RAIN", "FOG", "SNOW"};
 
     private WeatherProvider() {}
 
-    public static WeatherProvider getInstance() {
-        if (instance == null)
-            instance = new WeatherProvider();
-        return instance;
+    public static WeatherProvider getProvider() {
+        if (weatherProvider == null)
+            weatherProvider = new WeatherProvider();
+        return weatherProvider;
     }
 
     public String getCurrentWeather(Coordinates p_coordinates) {
-        return determineWeather(p_coordinates.getHeight(), p_coordinates.getLatitude());
-    }
-
-    private String determineWeather(int height, int latitude) {
+        int height = p_coordinates.getHeight();
+        int latitude = p_coordinates.getLatitude();
         String new_weather;
+
         if (height < 10) {
             if (latitude < 23)
                 new_weather = weather[0]; // SUN

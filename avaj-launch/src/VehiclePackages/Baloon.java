@@ -2,6 +2,7 @@ package VehiclePackages;
 
 import AircraftPackages.Aircraft;
 import CoordinatesPackages.Coordinates;
+import LogPackages.Log;
 
 public class Baloon extends Aircraft {
 
@@ -14,24 +15,28 @@ public class Baloon extends Aircraft {
         String weather = weatherTower.getWeather(coordinates);
         switch(weather){
             case "SUN":
-                coordinates = new Coordinates(coordinates.getLongitude() + 2, coordinates.getLatitude(), Math.min(coordinates.getHeight() + 4, 100));
-                System.out.println(this + ": Let's enjoy the good weather and take some pics.");
+                coordinates = new Coordinates(coordinates.getLongitude() + 2, coordinates.getLatitude(), coordinates.getHeight() + 4);
+                Log.write(this + ": Let's enjoy the good weather and take some pics.");
                 break;
             case "RAIN":
-                coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 5, 0));
-                System.out.println(this + ": Damn you rain! You messed up my baloon.");
+                coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), coordinates.getHeight() - 5);
+                Log.write(this + ": Damn you rain! You messed up my baloon.");
                 break;
             case "FOG":
-                coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 3, 0));
-                System.out.println(this + ": It's foggy. I can't see anything.");
+                coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), coordinates.getHeight() - 3);
+                Log.write(this + ": It's foggy. I can't see anything.");
                 break;
             case "SNOW":
-                coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), Math.max(coordinates.getHeight() - 15, 0));
-                System.out.println(this + ": It's snowing. We're gonna crash.");
+                coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(), coordinates.getHeight() - 15);
+                Log.write(this + ": It's snowing. We're gonna crash.");
                 break;
         }
-        if (coordinates.getHeight() == 0) {
-            System.out.println(this + ": landing.");
+        if (coordinates.getHeight() <= 0) {
+            Log.write(this + ": landing.");
+            unregisterTower();
+        }
+        else if (coordinates.getHeight() >= 100) {
+            Log.write("Height must be 0-100");
             unregisterTower();
         }
     }
