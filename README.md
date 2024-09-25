@@ -12,15 +12,17 @@ So they reach out to their local top software shop and assign them this task. He
 To implement an aircraft simulation program based on the provided class diagram, all classes must be implemented according to the diagram's specifications. While you can add more classes or attributes if necessary, you must not change access modifiers or the class hierarchy.
 
 ### Program Behavior
+
 Your program will take one command-line argument representing the name of a text file containing the scenario to be simulated. Executing the program will generate a `simulation.txt` file that describes the outcome of the simulation.
 
 **Example Usage:**
+
 $ java ro.academyplus.avaj.simulator.Simulator scenario.txt
 $ cat simulation.txt
 
-Scenario File Format
-The scenario.txt file should adhere to the following structure:
+Scenario File Format:
 
+The scenario.txt file should adhere to the following structure:
 - First Line: A positive integer representing the number of times the simulation will be run (i.e., the number of weather change triggers).
 - Subsequent Lines: Each line describes an aircraft participating in the simulation, formatted as follows:
 TYPE NAME LONGITUDE LATITUDE HEIGHT
@@ -30,8 +32,8 @@ Weather Generation
 There are four types of weather: RAIN, FOG, SUN, and SNOW. Each three-dimensional point has its own weather, and you can use any generation algorithm that considers the point's coordinates.
 
 Aircraft Behavior
-JetPlane:
 
+JetPlane:
 SUN: Latitude increases by 10, Height increases by 2.
 RAIN: Latitude increases by 5.
 FOG: Latitude increases by 1.
