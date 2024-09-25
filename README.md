@@ -17,8 +17,8 @@ Your program will take one command-line argument representing the name of a text
 
 **Example Usage:**
 
-$ java ro.academyplus.avaj.simulator.Simulator scenario.txt
-$ cat simulation.txt
+- $ java ro.academyplus.avaj.simulator.Simulator scenario.txt
+- $ cat simulation.txt
 
 Scenario File Format:
 
@@ -34,22 +34,22 @@ There are four types of weather: RAIN, FOG, SUN, and SNOW. Each three-dimensiona
 Aircraft Behavior
 
 JetPlane:
-SUN: Latitude increases by 10, Height increases by 2.
-RAIN: Latitude increases by 5.
-FOG: Latitude increases by 1.
-SNOW: Height decreases by 7.
+- SUN: Latitude increases by 10, Height increases by 2.
+- RAIN: Latitude increases by 5.
+- FOG: Latitude increases by 1.
+- SNOW: Height decreases by 7.
 
 Helicopter:
-SUN: Longitude increases by 10, Height increases by 2.
-RAIN: Longitude increases by 5.
-FOG: Longitude increases by 1.
-SNOW: Height decreases by 12.
+- SUN: Longitude increases by 10, Height increases by 2.
+- RAIN: Longitude increases by 5.
+- FOG: Longitude increases by 1.
+- SNOW: Height decreases by 12.
 
 Baloon:
-SUN: Longitude increases by 2, Height increases by 4.
-RAIN: Height decreases by 5.
-FOG: Height decreases by 3.
-SNOW: Height decreases by 15.
+- SUN: Longitude increases by 2, Height increases by 4.
+- RAIN: Height decreases by 5.
+- FOG: Height decreases by 3.
+- SNOW: Height decreases by 15.
 
 Simulation Rules:
 
