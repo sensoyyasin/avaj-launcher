@@ -32,7 +32,6 @@ Weather Generation
 There are four types of weather: RAIN, FOG, SUN, and SNOW. Each three-dimensional point has its own weather, and you can use any generation algorithm that considers the point's coordinates.
 
 Aircraft Behavior
-
 JetPlane:
 - SUN: Latitude increases by 10, Height increases by 2.
 - RAIN: Latitude increases by 5.
@@ -62,16 +61,14 @@ Simulation Rules:
 
 
 Execution
-
 To run the project, execute the following command:
 
-make run
+-> make run
 
 Cleanup
-
 To remove generated files, run:
 
-make clean
+-> make clean
 
 # Summary
 
